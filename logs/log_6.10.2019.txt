@@ -1,0 +1,162 @@
+22:30:38 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+22:30:38 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(49): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\x9D\xD0\x90\xD1\x87\xD0\xB0\xD1\x82\xD1\x8C')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:35:53 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:35:53 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(65): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\x9D\xD0\xB5\xD1\x82')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:46:32 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:46:32 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:47:56 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:47:56 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B 2019-1...')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:48:29 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:48:29 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B 2019-1...')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:49:17 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:49:17 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B 2017-1...')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:49:44 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:49:44 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B 2017-1...')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:50:09 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:50:09 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B \xD0\xBF\xD0\xB0\xD1\x80...')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:51:06 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:51:06 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B 2')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:51:12 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:51:12 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B \xD0\xBF\xD0\xB0\xD1\x80...')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:51:57 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:51:57 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B \xD0\xBF\xD0\xB0\xD1\x80...')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:52:01 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:52:01 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\x9D\xD0\xB5\xD1\x82')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:52:04 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message should be not an array","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:52:04 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, Array, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:52:24 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:52:24 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B \xD0\xBF\xD0\xB0\xD1\x80...')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:52:28 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:52:28 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(78): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B\xD0\xBF\xD0\xB0\xD1\x80\xD1...')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:53:12 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:53:12 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(79): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B \xD0\xBF\xD0\xB0\xD1\x80...')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:53:31 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:53:31 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(79): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B \xD0\xBF\xD0\xB0\xD1\x80...')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}
+23:53:53 [_vkApi_call] : [ERROR] {"error":{"error_code":100,"error_msg":"One of the parameters specified was missing or invalid: message is empty or invalid","request_params":[{"key":"peer_id","value":"120161867"},{"key":"attachment","value":""},{"key":"v","value":"5.67"},{"key":"method","value":"messages.send"},{"key":"oauth","value":"1"}]}}
+23:53:53 [callback_handleEvent] : [ERROR] Exception: Invalid response for messages.send request in /var/www/html/TimetableBot/api/vk_api.php:69
+Stack trace:
+#0 /var/www/html/TimetableBot/api/vk_api.php(10): _vkApi_call('messages.send', Array)
+#1 /var/www/html/TimetableBot/bot/bot.php(79): vkApi_messagesSend(120161867, NULL, Array)
+#2 /var/www/html/TimetableBot/index.php(58): bot_sendMessage(120161867, '\xD0\xBF\xD0\xB0\xD1\x80\xD1\x8B \xD0\xBF\xD0\xB0\xD1\x80...')
+#3 /var/www/html/TimetableBot/index.php(33): _callback_handleMessageNew(Array)
+#4 /var/www/html/TimetableBot/index.php(19): callback_handleEvent()
+#5 {main}

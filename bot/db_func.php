@@ -214,16 +214,12 @@ if (mysqli_connect_errno()) {
     } 
     $stmt->close(); 
     }   
-    
+    if($Group!=null){
       $group    =  $Group;
       $kyrs     =  now_year() - $year + 1;
       $podgroup =  $minigr;
       $groups   = "{$group}-{$kyrs}{$podgroup}"; 
-    
-    if ($groups==null){
-     $groups = "NONE";
-    }
-    
+    } else $groups="NONE";
 $mysqlis->close();  
 return $groups;
 }
@@ -232,6 +228,6 @@ function normal($times){
     return "$parts[0]:$parts[1]";
 } //Убираем секунды из строки
 
-echo(predict(120161867));
+//echo(predict(120161867));
 
 //echo(get_prep_rasp(22,'2019-10-01'));

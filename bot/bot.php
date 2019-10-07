@@ -55,12 +55,12 @@ function bot_sendMessage($user_id,$body) {
                 $tyear = now_year() - ($part[0]- 1);
                 user_info($user_id,'podgroup','set',$part[1],$mysqli);
                 user_info($user_id,'year','set',$tyear,$mysqli);
-                user_info($user_id,'dialog','set','none',$mysqli);
+                user_info($user_id,'dialog','set','none',$mysqli);}
           } else {
                $msg = "Напиши свою учебную группу";
                user_info($user_id,'dialog','set','set_group',$mysqli);
           }
-            }
+            
         break;
        case 'teacher_set':
            $temp =get_teach_id($body);

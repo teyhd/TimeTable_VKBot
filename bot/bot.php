@@ -1,14 +1,15 @@
 <?php
-function bot_sendMessage($user_id,$body) {
+function bot_sendMessage($user_id,$body,$from) {
     $mysqli = new mysqli(HOST_DB, LOGIN_DB, PASS_DB, "vlad");
     $keyboard = keybrd(2);
     $users_get_response = vkApi_usersGet($user_id);
     $user = array_pop($users_get_response);
     $name = $user['first_name'];
-    
+    $body = str_replace("[club178013145|@teyhdbot]", '', $body);
     $textmsg = mb_strtolower($body);         
     $textmsg = rtrim($textmsg,"!?.,/");
-    
+    $textmsg = ltrim($textmsg, " \t.");
+    $textmsg = ltrim($textmsg, " ");
     $dialog = user_info($user_id,'dialog','get','0',$mysqli);
 
     switch ($dialog) {
@@ -66,23 +67,23 @@ function bot_sendMessage($user_id,$body) {
        case 'teacher_set':
            $temp =get_teach_id($body);
           if($temp!="NONE"){
-          $msg = "Ваша фамилия найдена в базе данных! Чтобы узнать расписание на сегодня введите 'Расписание'!";
-          user_info($user_id,'teach_id','set',$temp,$mysqli);
-          user_info($user_id,'dialog','set','none',$mysqli);
+              $msg = "Ваша фамилия найдена в базе данных! Чтобы узнать расписание на сегодня введите 'Расписание'!";
+              user_info($user_id,'teach_id','set',$temp,$mysqli);
+              user_info($user_id,'dialog','set','none',$mysqli);
           } else $msg="Такая фамилия не найдена";
         break;
        case 'set_group':
             $temp =is_exist_gr($body);
           if($temp!=false){
-            $part = explode("-", $body);
-            $msg = "Чтобы узнать расписание на сегодня введите расписание!";
-            user_info($user_id,'learn_group','set',$part[0],$mysqli);
-            $part = $part[1]/10;
-            $part = explode(".", $part);
-            $tyear = now_year() - ($part[0]- 1);
-            user_info($user_id,'podgroup','set',$part[1],$mysqli);
-            user_info($user_id,'year','set',$tyear,$mysqli);
-            user_info($user_id,'dialog','set','none',$mysqli);
+                $part = explode("-", $body);
+                $msg = "Чтобы узнать расписание на сегодня введите расписание!";
+                user_info($user_id,'learn_group','set',$part[0],$mysqli);
+                $part = $part[1]/10;
+                $part = explode(".", $part);
+                $tyear = now_year() - ($part[0]- 1);
+                user_info($user_id,'podgroup','set',$part[1],$mysqli);
+                user_info($user_id,'year','set',$tyear,$mysqli);
+                user_info($user_id,'dialog','set','none',$mysqli);
           } else $msg="Такая группа не найдена. Введите свою группу в формате: 'АИСТбд-11'";
         break;
         
@@ -117,18 +118,19 @@ function bot_sendMessage($user_id,$body) {
                 break;
                case 'познакомиться':
                case 'знакомство':
+               case 'настроить':
                    $msg = "Вас приветствует университет ИАТУ! Какая ваша должность? Студент / Преподаватель?";
                    user_info($user_id,'dialog','set','set_who',$mysqli);
                    $keyboard = keybrd(1);
                break;
                 default:
-                    $msg = "Такой команды нет.";
+                    $msg = "Такой команды нет";
                     break;
             }
         break;
     }
     
-    vkApi_messagesSend($user_id, $msg, array(),$keyboard);
+    vkApi_messagesSend($from, $msg, array(),$keyboard);
     $mysqli->close();  
 }
 

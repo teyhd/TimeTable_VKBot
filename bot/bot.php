@@ -95,7 +95,7 @@ function bot_sendMessage($user_id,$body,$from) {
                 case 'расписание':
                       $whoam = user_info($user_id,'who','get','student',$mysqli);
                       if($countPar>1){
-                          if($parts[1]=='завтра'){
+                          if(($parts[1]=='на')||($parts[1]=='завтра')){
                               $date = date('Y-m-d', strtotime(' +1 day'));
                           } else{
                               $parts = explode(".",$parts[1]);
@@ -124,7 +124,7 @@ function bot_sendMessage($user_id,$body,$from) {
                    $keyboard = keybrd(1);
                break;
                 default:
-                    $msg = "Такой команды нет";
+                    $msg = "Такой команды нет. Чтобы узнать пары введи: 'Пары'. Чтобы узнать пары в определенный день напиши: 'Пары дд.мм'. Чтобы узнать пары на завтра введи: 'Пары завтра'. Чтобы сменить группу или должность введи: 'Настроить'";
                     break;
             }
         break;

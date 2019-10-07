@@ -1,6 +1,6 @@
 <?php
 function bot_sendMessage($user_id,$body) {
-    $mysqli = new mysqli("95.104.192.212", "vlad", "NtGKMgrq7SQ6UWvN", "vlad");
+    $mysqli = new mysqli(HOST_DB, LOGIN_DB, PASS_DB, "vlad");
     $keyboard = keybrd(2);
     $users_get_response = vkApi_usersGet($user_id);
     $user = array_pop($users_get_response);
@@ -27,6 +27,7 @@ function bot_sendMessage($user_id,$body) {
                     } else{
                         $tempgroup = predict($user_id);
                         $msg = "Твоя группа: {$tempgroup}?";
+                        $keyboard = keybrd(3);
                         user_info($user_id,'dialog','set','set_pred',$mysqli);
                     }
                 break;
@@ -93,10 +94,14 @@ function bot_sendMessage($user_id,$body) {
                 case 'расписание':
                       $whoam = user_info($user_id,'who','get','student',$mysqli);
                       if($countPar>1){
+                          if($parts[1]=='завтра'){
+                              $date = date('Y-m-d', strtotime(' +1 day'));
+                          } else{
                               $parts = explode(".",$parts[1]);
                               $date = now_year();
                               $date = "{$date}-{$parts[1]}-{$parts[0]}";
-                          } else $date = date('Y-m-d');
+                          } 
+                     } else $date = date('Y-m-d');
                       if ($whoam=='student'){
                           $group    =  user_info($user_id,'learn_group','get',1,$mysqli);
                           $kyrs     =  now_year() - user_info($user_id,'year','get',1,$mysqli) + 1;

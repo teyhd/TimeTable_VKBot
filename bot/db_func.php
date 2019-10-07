@@ -1,5 +1,5 @@
 <?php
- //$mysqli = new mysqli("95.104.192.212", "vlad", "NtGKMgrq7SQ6UWvN", "vlad");
+
 function user_add($user_id,$mysqli){
 /* Проверка соединения */ 
 if (mysqli_connect_errno()) { 
@@ -50,7 +50,7 @@ return $temp;
 }
 
 function get_teach_id($teach_name){
-    $mysqlis = new mysqli("95.104.192.212", "vlad", "NtGKMgrq7SQ6UWvN", "raspisanie");
+    $mysqlis = new mysqli(HOST_DB, LOGIN_DB, PASS_DB, "raspisanie");
     if (!$mysqlis->set_charset("utf8")) {
     printf("Ошибка при загрузке набора символов utf8: %s\n", $mysqlis->error);
     exit();
@@ -76,7 +76,7 @@ $mysqlis->close();
 return $temp;
 } //Узнаем id препода
 function get_teach($teach_name){
-    $mysqlis = new mysqli("95.104.192.212", "vlad", "NtGKMgrq7SQ6UWvN", "raspisanie");
+    $mysqlis = new mysqli(HOST_DB, LOGIN_DB, PASS_DB, "raspisanie");
     if (!$mysqlis->set_charset("utf8")) {
     printf("Ошибка при загрузке набора символов utf8: %s\n", $mysqlis->error);
     exit();
@@ -102,7 +102,7 @@ $mysqlis->close();
 return $temp;
 } //Препода по id
 function is_exist_gr($ygroup){
-    $mysqlis = new mysqli("95.104.192.212", "vlad", "NtGKMgrq7SQ6UWvN", "raspisanie");
+     $mysqlis = new mysqli(HOST_DB, LOGIN_DB, PASS_DB, "raspisanie");
     if (!$mysqlis->set_charset("utf8")) {
     printf("Ошибка при загрузке набора символов utf8: %s\n", $mysqlis->error);
     exit();
@@ -129,7 +129,7 @@ return $temp;
 } //Проверяем существование группы
 
 function get_stud_raspis($group,$dates){
-    $mysqlis = new mysqli("95.104.192.212", "vlad", "NtGKMgrq7SQ6UWvN", "raspisanie");
+     $mysqlis = new mysqli(HOST_DB, LOGIN_DB, PASS_DB, "raspisanie");
     if (!$mysqlis->set_charset("utf8")) {
     printf("Ошибка при загрузке набора символов utf8: %s\n", $mysqlis->error);
     exit();
@@ -160,7 +160,7 @@ return $temp;
 } //Вывод для студентов
 function get_prep_rasp($teach,$dates){
     $teach= get_teach($teach); 
-    $mysqlis = new mysqli("95.104.192.212", "vlad", "NtGKMgrq7SQ6UWvN", "raspisanie");
+     $mysqlis = new mysqli(HOST_DB, LOGIN_DB, PASS_DB, "raspisanie");
     if (!$mysqlis->set_charset("utf8")) {
     printf("Ошибка при загрузке набора символов utf8: %s\n", $mysqlis->error);
     exit();
@@ -190,7 +190,7 @@ return $temp;
 
 } //Вывод для преподов
 function predict($user_id){
-    $mysqlis = new mysqli("95.104.192.212", "vlad", "NtGKMgrq7SQ6UWvN", "users_iatu");
+     $mysqlis = new mysqli(HOST_DB, LOGIN_DB, PASS_DB, "users_iatu");
     if (!$mysqlis->set_charset("utf8")) {
     printf("Ошибка при загрузке набора символов utf8: %s\n", $mysqlis->error);
     exit();

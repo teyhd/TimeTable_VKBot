@@ -54,9 +54,10 @@ function _callback_handleConfirmation() {
 }
 
 function _callback_handleMessageNew($data) {
-  $user_id = $data['user_id'];
-  $body = $data['body'];
-  bot_sendMessage($user_id,$body);
+  $user_id = $data['from_id'];
+  $body = $data['text'];
+  $from = $data['peer_id'];
+  bot_sendMessage($user_id,$body,$from);
   _callback_okResponse();
 }
 

@@ -1,6 +1,6 @@
 # ВКбот расписание для ИАТУ
 
-Бот на vk CallBackAPI
+Бот на vk CallBackAPI v 5.80
 
 # Новые функции!
 
@@ -31,5 +31,3 @@ $ git clone https://github.com/teyhd/TimeTable_VKBot.git
 | ------  | ------  | ------  | ------  | ------  | ------  | ------  | ------  |
 | 0 | 3433 | student | 0 | 0 | 0 | 0 | 0 |
 | 1 | 3433 | prepod | 0 | 0 | 0 | 0 | 0 |
-
-# Версия CallbackAPI -v 5.80

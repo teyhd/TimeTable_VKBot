@@ -27,7 +27,6 @@ $ git clone https://github.com/teyhd/TimeTable_VKBot.git
 
 База данных, имеющая таблицу (или представление) следующего вида:
 
-Полные тексты	
 | id | vkId | who | dialog | teach_id | learnGroup | year | podGroup |
 | ------  | ------  | ------  | ------  | ------  | ------  | ------  | ------  |
 | 0 | 3433 | student | 0 | 0 | 0 | 0 | 0 |

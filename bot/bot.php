@@ -109,7 +109,7 @@ function bot_sendMessage($user_id,$body,$from) {
                           $podgroup =  user_info($user_id,'podgroup','get',1,$mysqli);
                           $groups   = "{$group}-{$kyrs}{$podgroup}"; 
                           //$msg = $date;
-                          $msg = get_stud_raspis($groups,$date);
+                          $msgr = get_stud_raspis($groups,$date);
                       }
                           else {
                               $teach_id = user_info($user_id,'teach_id','get',1,$mysqli);
@@ -128,6 +128,12 @@ function bot_sendMessage($user_id,$body,$from) {
                     break;
             }
         break;
+    }
+    if($msgr!=null){
+       $msg = explode("*",$msgr); 
+       foreach ($msg as $value) {
+           vkApi_messagesSend($from, $value, array(),$keyboard);
+       }
     }
     
     vkApi_messagesSend($from, $msg, array(),$keyboard);

@@ -145,7 +145,7 @@ if (mysqli_connect_errno()) {
     while ($stmt->fetch()) { 
         $col1 = normal($col1);
         $col2 = normal($col2);
-        $temp ="$temp* [$num] [$col1-$col2] $col3 Аудитория: [$col6]; Подгруппа: [$col7]; Учитель: [$col5] [{$col4}]";
+        $temp ="$temp* [$num] [$col1-$col2] $col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nУчитель: [$col5] \n[{$col4}]";
         $num++;
     } 
     $stmt->close(); 
@@ -176,7 +176,7 @@ if (mysqli_connect_errno()) {
     while ($stmt->fetch()) { 
         $col1 = normal($col1);
         $col2 = normal($col2);
-        $temp ="$temp\n\n [$num] [$col1-$col2] $col3 Аудитория: [$col6]; Подгруппа: [$col7]; Группа: [$col5] [{$col4}]";
+        $temp ="$temp\n\n [$num] [$col1-$col2] $col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nГруппа: [$col5] \n[{$col4}]";
         $num++;
     } 
     $stmt->close(); 

@@ -91,6 +91,9 @@ function bot_sendMessage($user_id,$body,$from) {
             $parts = explode(" ",$textmsg);
             $countPar = count($parts);
             switch ($parts[0]) {
+                case 'тест':
+                    $msg = 'Это хуйня работает!!!';
+                    break;
                 case 'пары':
                 case 'расписание':
                       $whoam = user_info($user_id,'who','get','student',$mysqli);

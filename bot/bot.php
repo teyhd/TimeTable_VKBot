@@ -92,7 +92,7 @@ function bot_sendMessage($user_id,$body,$from) {
             $countPar = count($parts);
             switch ($parts[0]) {
                 case 'тест':
-                    $msg = 'Эта хуйня работает!!!';
+                    $msg = 'Эта хуйня теперь реально работает!!!';
                     break;
                 case 'пары':
                 case 'расписание':

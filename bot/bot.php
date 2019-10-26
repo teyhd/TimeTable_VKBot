@@ -86,6 +86,32 @@ function bot_sendMessage($user_id,$body,$from) {
                 user_info($user_id,'dialog','set','none',$mysqli);
           } else $msg="Такая группа не найдена. Введите свою группу в формате: 'АИСТбд-11'";
         break;
+       case 'settings':
+           if( ($textmsg=="оболочку") || ($textmsg=="оболочка") || ($textmsg=="графическую оболочку") || ($textmsg=="графическая оболчка")){
+               $msg = "Оболочка успешно установлена!";
+               $gmod = user_info($user_id,'gmod','get',1,$mysqli);
+               if($gmod==1){
+                   user_info($user_id,'gmod','set',2,$mysqli);
+               } else user_info($user_id,'gmod','set',1,$mysqli);
+               user_info($user_id,'dialog','set','none',$mysqli);
+               $keyboard = keybrd(2);
+           }
+           elseif($textmsg=="должность" || $textmsg=="группу" || $textmsg=="группа" || $textmsg=="должность/группу"){
+               $msg = "Вас приветствует университет ИАТУ! Какая ваша должность? Студент / Преподаватель?";
+               user_info($user_id,'dialog','set','set_who',$mysqli);
+               $keyboard = keybrd(1);
+           }
+          elseif($textmsg=="ничего"){
+               user_info($user_id,'dialog','set','none',$mysqli);
+               $msg = "Ничего не настроено";
+               $keyboard = keybrd(2);
+           }
+           else{
+               $msg = "Такого пункта нет. Что вы хотите натсроить? Графическую оболочку[оболочку] | Должность/Группу | Ничего";
+               $keyboard = keybrd(4);
+           }
+           
+        break;        
         
         default:
             $parts = explode(" ",$textmsg);
@@ -93,7 +119,8 @@ function bot_sendMessage($user_id,$body,$from) {
             switch ($parts[0]) {
 
                 case 'тест':
-                    $msg = 'Работает!!!';
+                    //$msg = 'Работает!!!';
+                    $msg = sendPhoto(120161867);
                     break;
 
                 case 'пары':
@@ -127,9 +154,9 @@ function bot_sendMessage($user_id,$body,$from) {
                case 'познакомиться':
                case 'знакомство':
                case 'настроить':
-                   $msg = "Вас приветствует университет ИАТУ! Какая ваша должность? Студент / Преподаватель?";
-                   user_info($user_id,'dialog','set','set_who',$mysqli);
-                   $keyboard = keybrd(1);
+                   $msg ="Что вы хотите натсроить? Графическую оболочку | Должность/Группу | Ничего";
+                   user_info($user_id,'dialog','set','settings',$mysqli);
+                   $keyboard = keybrd(4);
                break;
                 default:
                     $msg = "Такой команды нет. Чтобы узнать пары введи: 'Пары'. Чтобы узнать пары в определенный день напиши: 'Пары дд.мм'. Чтобы узнать пары на завтра введи: 'Пары завтра'. Чтобы сменить группу или должность введи: 'Настроить'";

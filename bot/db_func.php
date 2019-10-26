@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
     exit(); 
 }     
     $Dial = 'who';
-    $stmt = $mysqli->prepare("INSERT INTO users VALUES (0, ?, 0, ?, 0, 0, 0, 0)"); 
+    $stmt = $mysqli->prepare("INSERT INTO users VALUES (0, ?, 0, ?, 0, 0, 0, 0, 1)"); 
     $stmt->bind_param('ds', $user_id,$Dial); 
     $stmt->execute(); 
     $stmt->close(); 
@@ -146,7 +146,7 @@ if (mysqli_connect_errno()) {
     while ($stmt->fetch()) { 
         $col1 = normal($col1);
         $col2 = normal($col2);
-        $temp ="$temp* [$num] [$col1-$col2] $col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nУчитель: [$col5] \n[{$col4}]";
+        $temp ="$temp* [$num] [$col1-$col2] \n$col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nУчитель: [$col5] \n[{$col4}]";
         $num++;
     } 
     $stmt->close(); 

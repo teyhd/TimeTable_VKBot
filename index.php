@@ -13,6 +13,8 @@ require_once 'bot/bot.php';
 require_once 'bot/keyboard.php';
 require_once 'bot/db_func.php';
 require_once 'bot/functions.php';
+require_once 'bot/gmodule.php';
+
 date_default_timezone_set('Europe/Ulyanovsk');
 if (!isset($_REQUEST)) {
   exit;

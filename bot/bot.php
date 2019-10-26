@@ -91,17 +91,17 @@ function bot_sendMessage($user_id,$body,$from) {
             $parts = explode(" ",$textmsg);
             $countPar = count($parts);
             switch ($parts[0]) {
-                case 'тест':
-                    $msg = 'Это хуйня работает!!!';
-                    break;
                 case 'пары':
                 case 'расписание':
                       $whoam = user_info($user_id,'who','get','student',$mysqli);
                       if($countPar>1){
-                          if(($parts[1]=='на')||($parts[1]=='завтра')){
+                          if(($parts[1]=='завтра')||($parts[2]=='завтра')){
                               $date = date('Y-m-d', strtotime(' +1 day'));
                           } else{
-                              $parts = explode(".",$parts[1]);
+                              if (strpos($parts[1], '.') !== false) {
+                                    $parts = explode(".",$parts[1]);
+                                } else $parts = explode(".",$parts[2]);
+                              
                               $date = now_year();
                               $date = "{$date}-{$parts[1]}-{$parts[0]}";
                           } 

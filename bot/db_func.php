@@ -138,6 +138,7 @@ if (mysqli_connect_errno()) {
     printf("Подключение невозможно: %s\n", mysqli_connect_error()); 
     exit(); 
 } 
+    
   if ($stmt = $mysqlis->prepare("SELECT timeStart, timeStop, discipline, type,teacher, cabinet, subgroup FROM `timetable` WHERE `class`='{$group}' AND `date`='{$dates}'")) { 
     $stmt->execute(); 
     $stmt->bind_result($col1,$col2,$col3,$col4,$col5,$col6,$col7);
@@ -152,6 +153,9 @@ if (mysqli_connect_errno()) {
     }   
     if ($temp==null){
         $temp = "В этот день нет пар!";
+    } else {
+        $part = explode("-", $dates);
+        $temp = "$temp* Расписание на $part[2].$part[1]";
     }
 
 $mysqlis->close();  

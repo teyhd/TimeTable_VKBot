@@ -120,7 +120,46 @@ function bot_sendMessage($user_id,$body,$from) {
 
                 case 'тест':
                     //$msg = 'Работает!!!';
-                    $msg = sendPhoto(120161867);
+                    //$msg = sendPhoto(120161867);
+                    $json = '[
+                      {
+                        "subject": "gu",
+                        "type": "Л",
+                        "teacher": "aaaaa",
+                        "audience": "235a",
+                        "time_start": "09:20",
+                        "time_end": "13:55",
+                        "subgroup": "1"
+                      },
+                      {
+                        "subject": "ug",
+                        "type": "Л",
+                        "teacher": "aaaaa",
+                        "audience": "237",
+                        "time_start": "09:20",
+                        "time_end": "13:55",
+                        "subgroup": "2"
+                      },
+                      {
+                        "subject": "ugu",
+                        "type": "Л",
+                        "teacher": "aaaaa",
+                        "audience": "237",
+                        "time_start": "12:20",
+                        "time_end": "13:55",
+                        "subgroup": "2"
+                      },
+                      {
+                        "subject": "d",
+                        "type": "Л",
+                        "teacher": "bbbbb",
+                        "audience": "237",
+                        "time_start": "15:40",
+                        "time_end": "14:05",
+                        "subgroup": "0"
+                      }
+                    ]';
+                    g_create($json,120161867);
                     break;
 
                 case 'пары':

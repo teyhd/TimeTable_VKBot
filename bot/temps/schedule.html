@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/w3.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="Date">
+    <p>00.00.0000</p>
+  </div>
+  {% set max_count = lessons|groupby('time_start')|max_length_of_groups %}
+  {% for group in lessons|groupby('time_start') %}
+  {% set count = group.list|length %}
+  <div class="w3-col s1 Time">
+    <p>
+      {{group.list|map(attribute='time_start')|first}}
+      <br>
+      {{group.list|map(attribute='time_end')|first}}
+    </p>
+  </div>
+  {% set subgroup_size = 12//group.list|add_empty_subgroups|length%}
+  <div class="CommonBlock">
+    {% for item in group.list|add_empty_subgroups %}
+    <div class="w3-col s{{subgroup_size}} NotTime">
+      <div class="Type">
+        {% if item!=None %}
+        <p>{{item.type}}</p>
+        {% endif %}
+      </div>
+      <div class="Name">
+        {% if item!=None %}
+        <p>{{item.subject}} / {{item.teacher}}</p>
+        {% endif %}
+      </div>
+      <div class="Place">
+        {% if item!=None %}
+        <p>{{item.audience}}</p>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</body>
+
+</html>

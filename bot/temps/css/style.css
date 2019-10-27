@@ -1,0 +1,73 @@
+body{
+	font-family: Comic Sans MS;
+}
+.Date {
+	height: 120px;
+	width:calc(100% - 34px);
+    background: #F5F5F5;
+	font-size:33px;
+	border: 3px solid black;
+	border-radius: 25px;
+	text-align:center;
+	vertical-align: middle;
+	margin: 17px;
+}
+.Time{
+	display: inline-block;
+	height: 85px;
+	font-size: 16px;
+	background: #FFFFF0;
+	border: 3px solid black;
+	border-radius: 25px;
+	margin: 5px 17px;
+	text-align: center;
+	vertical-align: middle;
+}
+.Type{
+	display: inline-block;
+	min-height:85px;
+	width:70px;
+	font-size:22px;
+	background: #E6E6FA;
+	border: 3px solid black;
+	border-radius: 25px;
+	margin: 5px;
+	text-align:center;
+	vertical-align: middle;
+}
+.Name{
+	display: inline-block;
+	min-height:85px;
+	width:calc(100% - 220px);
+	font-size:20px;
+    background: #E6E6FA;
+	border: 3px solid black;
+	border-radius: 25px;
+	margin: 5px;
+	text-align:center;
+	vertical-align: middle;
+}
+.Place{
+	display: inline-block;
+	min-height:85px;
+	width:80px;
+	font-size:22px;
+    background: #FFFFF0;
+	border: 3px solid black;
+	border-radius: 25px;
+	margin: 5px;
+	text-align:center;
+	vertical-align: middle;
+}
+
+.NotTime{
+	display: inline-block;
+	text-align:center;
+}
+.CommonBlock{
+	display: inline-block;
+	text-align:center;
+	width:calc(91% - 34px);
+    border-left: 1px solid black;
+    border-right: 2px solid black;
+}

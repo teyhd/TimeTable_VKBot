@@ -1,6 +1,6 @@
 <?php
 
-function g_create($json){
+function g_create($json,$user_id){
     $work_dir=exec("pwd");
 
 if(!file_exists($work_dir."/temps")){
@@ -8,7 +8,7 @@ if(!file_exists($work_dir."/temps")){
 	die("Не могу создать директорию temp");
 }
 
-$script_py = $work_dir."/main.py";
+$script_py = $work_dir."/temps/main.py";
 $script_input = $work_dir."/temps/in.json";
 $script_output= $work_dir."/temps/out.jpg";
 
@@ -18,23 +18,8 @@ fclose($fd);
 
 $command = escapeshellcmd($script_py.' '.$script_input.' '.$script_output);
 $output = shell_exec($command);
-echo $output;
 
-
-
-echo '
-<html>
- <head>
-  <meta charset="utf-8">
-  <title>Генератор расписания</title>
- </head>
- <body> 
-
-  <img src="temps/out.jpg"  alt="расписание">
-
- </body>
-</html>
-';
+sendPhoto($user_id);
 }
 function _bot_uploadPhoto($user_id, $file_name) {
   $upload_server_response = vkApi_photosGetMessagesUploadServer($user_id);
@@ -48,7 +33,7 @@ function _bot_uploadPhoto($user_id, $file_name) {
 }
 function sendPhoto($user_id) {
     $work_dir=exec("pwd");
-    $script_output= $work_dir."/bot/temps/out.jpg";
+    $script_output= $work_dir."/temps/out.jpg";
     if (file_exists($script_output)) {
          $photo = _bot_uploadPhoto($user_id, $script_output);
       $attachments = array(

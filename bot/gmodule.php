@@ -20,9 +20,9 @@ fclose($fd);
 $command = escapeshellcmd($script_py.' '.$script_input.' '.$script_output);
 $output = shell_exec($command);
  if (file_exists($script_output)) sendPhoto($user_id);
- else return "errrr";
+ else return $script_output;
 
-return $script_output;
+
 }
 function _bot_uploadPhoto($user_id, $file_name) {
   $upload_server_response = vkApi_photosGetMessagesUploadServer($user_id);

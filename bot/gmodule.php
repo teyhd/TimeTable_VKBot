@@ -8,9 +8,9 @@ if(!file_exists($work_dir."/temps")){
 	die("Не могу создать директорию temp");
 }
 
-$script_py = $work_dir."/temps/main.py";
-$script_input = $work_dir."/temps/in.json";
-$script_output= $work_dir."/temps/out.jpg";
+$script_py = $work_dir."/bot/temps/main.py";
+$script_input = $work_dir."/bot/temps/in.json";
+$script_output= $work_dir."/bot/temps/out.jpg";
 
 $fd = fopen($script_input, 'w') or die("не удалось создать файл");
 fwrite($fd, $json);
@@ -33,7 +33,7 @@ function _bot_uploadPhoto($user_id, $file_name) {
 }
 function sendPhoto($user_id) {
     $work_dir=exec("pwd");
-    $script_output= $work_dir."/temps/out.jpg";
+    $script_output= $work_dir."/bot/temps/out.jpg";
     if (file_exists($script_output)) {
          $photo = _bot_uploadPhoto($user_id, $script_output);
       $attachments = array(
@@ -42,10 +42,10 @@ function sendPhoto($user_id) {
     
       $keyboard = keybrd(2);
      vkApi_messagesSend($user_id, '', $attachments,$keyboard);
-     unlink($script_output);
+    // unlink($script_output);
      return "";
     } else {
-        return "Произошла ошиба";
+        return "Произошла ошибка!!!";
     }
 
 }

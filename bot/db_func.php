@@ -153,11 +153,7 @@ if (mysqli_connect_errno()) {
     }   
     if ($temp==null){
         $temp = "В этот день нет пар!";
-    } else {
-        $part = explode("-", $dates);
-        $temp = "$temp* Расписание на $part[2].$part[1]";
-    }
-
+    } 
 $mysqlis->close();  
 return $temp;
 

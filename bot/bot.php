@@ -122,44 +122,17 @@ function bot_sendMessage($user_id,$body,$from) {
                     //$msg = 'Работает!!!';
                     //$msg = sendPhoto(120161867);
                     $json = '[
-                      {
-                        "subject": "gu",
-                        "type": "Л",
-                        "teacher": "aaaaa",
-                        "audience": "235a",
-                        "time_start": "09:20",
-                        "time_end": "13:55",
-                        "subgroup": "1"
-                      },
-                      {
-                        "subject": "ug",
-                        "type": "Л",
-                        "teacher": "aaaaa",
-                        "audience": "237",
-                        "time_start": "09:20",
-                        "time_end": "13:55",
-                        "subgroup": "2"
-                      },
-                      {
-                        "subject": "ugu",
-                        "type": "Л",
-                        "teacher": "aaaaa",
-                        "audience": "237",
-                        "time_start": "12:20",
-                        "time_end": "13:55",
-                        "subgroup": "2"
-                      },
-                      {
-                        "subject": "d",
-                        "type": "Л",
-                        "teacher": "bbbbb",
-                        "audience": "237",
-                        "time_start": "15:40",
-                        "time_end": "14:05",
-                        "subgroup": "0"
-                      }
-                    ]';
-                    g_create($json,120161867);
+                            {
+                            "subject": "Предмет",
+                            "type": "L",
+                            "teacher": "aaaaa",
+                            "audience": "235a",
+                            "time_start": "09:20",
+                            "time_end": "13:55",
+                            "subgroup": "1"
+                            }
+                            ]';
+                    $msg = g_create($json,120161867);
                     break;
 
                 case 'пары':
@@ -169,14 +142,23 @@ function bot_sendMessage($user_id,$body,$from) {
                           if(($parts[1]=='завтра')||($parts[2]=='завтра')){
                               $date = date('Y-m-d', strtotime(' +1 day'));
                           } else{
+                              
                               if (strpos($parts[1], '.') !== false) {
                                     $parts = explode(".",$parts[1]);
                                 } else $parts = explode(".",$parts[2]);
-                              
                               $date = now_year();
                               $date = "{$date}-{$parts[1]}-{$parts[0]}";
+                              $partrs = explode("-",$date);
+                              //checkdate ( int $month , int $day , int $year ) : bool
+                              if (checkdate($partrs[1],$partrs[2],$partrs[0])==false){
+                                  vkApi_messagesSend($from, "Неверная дата!!!", array(),$keyboard);
+                                    return 'Error';
+                              }
                           } 
                      } else $date = date('Y-m-d');
+                      $part = explode("-", $date);
+                      $temp_d = "Расписание на $part[2].$part[1]";
+                      vkApi_messagesSend($from, $temp_d, array(),$keyboard);
                       if ($whoam=='student'){
                           $group    =  user_info($user_id,'learn_group','get',1,$mysqli);
                           $kyrs     =  now_year() - user_info($user_id,'year','get',1,$mysqli) + 1;

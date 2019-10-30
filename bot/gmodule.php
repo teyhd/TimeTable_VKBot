@@ -12,14 +12,17 @@ $script_py = $work_dir."/bot/temps/main.py";
 $script_input = $work_dir."/bot/temps/in.json";
 $script_output= $work_dir."/bot/temps/out.jpg";
 
-$fd = fopen($script_input, 'w') or die("не удалось создать файл");
+$fd = fopen($script_input, 'w') or die("Cant create");
+
 fwrite($fd, $json);
 fclose($fd);
 
 $command = escapeshellcmd($script_py.' '.$script_input.' '.$script_output);
 $output = shell_exec($command);
+ if (file_exists($script_output)) sendPhoto($user_id);
+ else return "errrr";
 
-sendPhoto($user_id);
+return $script_output;
 }
 function _bot_uploadPhoto($user_id, $file_name) {
   $upload_server_response = vkApi_photosGetMessagesUploadServer($user_id);
@@ -41,7 +44,7 @@ function sendPhoto($user_id) {
       );
     
       $keyboard = keybrd(2);
-     vkApi_messagesSend($user_id, '', $attachments,$keyboard);
+     vkApi_messagesSend($user_id, 'картинка', $attachments,$keyboard);
     // unlink($script_output);
      return "";
     } else {

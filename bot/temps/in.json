@@ -1,11 +1,11 @@
 [
-{
-"subject": "Предмет",
-"type": "L",
-"teacher": "aaaaa",
-"audience": "235a",
-"time_start": "09:20",
-"time_end": "13:55",
-"subgroup": "1"
-}
-]
+                            {
+                            "subject": "Предмет",
+                            "type": "L",
+                            "teacher": "aaaaa",
+                            "audience": "235a",
+                            "time_start": "09:20",
+                            "time_end": "13:55",
+                            "subgroup": "1"
+                            }
+                            ]

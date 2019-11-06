@@ -172,12 +172,12 @@ if (mysqli_connect_errno()) {
             $array['time_end'] = "$col2";
             $array['subgroup'] = "$col7";
             array_push($ansr,$array);
-            $temp ="$temp* [$num] [$col1-$col2] \n$col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nУчитель: [$col5] \n[{$col4}]";
+           // $temp ="$temp* [$num] [$col1-$col2] \n$col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nУчитель: [$col5] \n[{$col4}]";
             $num++;
         } 
         $stmt->close(); 
         }   
-        if ($temp==null){
+        if ($num==null){
             $temp = "В этот день нет пар!";
             return $temp;
         } 
@@ -260,3 +260,4 @@ function normal($times){
 //echo(predict(120161867));
 
 //echo(get_prep_rasp(22,'2019-10-01'));
+ 

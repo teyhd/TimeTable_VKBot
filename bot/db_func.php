@@ -156,7 +156,7 @@ if (mysqli_connect_errno()) {
            case 'Практика':
                 $array['type'] =  "Пр";
                 break;
-           case 'Лаб':
+           case 'Лабораторная работа':
                 $array['type'] =  "Лаб";
                 break;     
             

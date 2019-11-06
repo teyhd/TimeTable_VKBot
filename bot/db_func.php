@@ -128,7 +128,7 @@ $mysqlis->close();
 return $temp;
 } //Проверяем существование группы
 
-function get_stud_raspis($group,$dates,$graph){
+function get_stud_raspis($groups,$date,$graph,$user_id){
     $array = array();
     $ansr = array();
      $mysqlis = new mysqli(HOST_DB, LOGIN_DB, PASS_DB, "raspisanie");

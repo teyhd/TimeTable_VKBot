@@ -128,7 +128,7 @@ $mysqlis->close();
 return $temp;
 } //Проверяем существование группы
 
-function get_stud_raspis($group,$dates){
+function get_stud_raspis($group,$dates,$user_id){
      $mysqlis = new mysqli(HOST_DB, LOGIN_DB, PASS_DB, "raspisanie");
     if (!$mysqlis->set_charset("utf8")) {
     printf("Ошибка при загрузке набора символов utf8: %s\n", $mysqlis->error);
@@ -138,7 +138,7 @@ if (mysqli_connect_errno()) {
     printf("Подключение невозможно: %s\n", mysqli_connect_error()); 
     exit(); 
 } 
-    
+    $graph = user_info($user_id,'gmod','get','5',$mysqli);
   if ($stmt = $mysqlis->prepare("SELECT timeStart, timeStop, discipline, type,teacher, cabinet, subgroup FROM `timetable` WHERE `class`='{$group}' AND `date`='{$dates}'")) { 
     $stmt->execute(); 
     $stmt->bind_result($col1,$col2,$col3,$col4,$col5,$col6,$col7);
@@ -146,7 +146,7 @@ if (mysqli_connect_errno()) {
     while ($stmt->fetch()) { 
         $col1 = normal($col1);
         $col2 = normal($col2);
-        $temp ="$temp* [$num] [$col1-$col2] \n$col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nУчитель: [$col5] \n[{$col4}]";
+        $temp ="$temp* [$num] [$col1-$col2] \n$col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nУчитель: [$col5] \n[{$col4}] Test:{$graph}";
         $num++;
     } 
     $stmt->close(); 

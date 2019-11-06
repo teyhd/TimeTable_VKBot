@@ -1,16 +1,16 @@
 <?php
 
 function g_create($json,$user_id){
-    $work_dir=exec("pwd");
+    $work_dir="/home/administrator/html/api/print-schedule";
 
 if(!file_exists($work_dir."/temps")){
     if(!mkdir($work_dir."/temps", 0777))
 	die("Не могу создать директорию temp");
 }
 
-$script_py = $work_dir."/bot/temps/main.py";
-$script_input = $work_dir."/bot/temps/in.json";
-$script_output= $work_dir."/bot/temps/out.jpg";
+$script_py = $work_dir."/main.py";
+$script_input = $work_dir."/temps/in.json";
+$script_output= $work_dir."/temps/out.jpg";
 
 $fd = fopen($script_input, 'w') or die("Cant create");
 
@@ -20,9 +20,9 @@ fclose($fd);
 $command = escapeshellcmd($script_py.' '.$script_input.' '.$script_output);
 $output = shell_exec($command);
  if (file_exists($script_output)) sendPhoto($user_id);
- else return "errrr";
+ else return $script_output;
 
-return $script_output;
+//return $script_output;
 }
 function _bot_uploadPhoto($user_id, $file_name) {
   $upload_server_response = vkApi_photosGetMessagesUploadServer($user_id);
@@ -35,8 +35,8 @@ function _bot_uploadPhoto($user_id, $file_name) {
   return $photo;
 }
 function sendPhoto($user_id) {
-    $work_dir=exec("pwd");
-    $script_output= $work_dir."/bot/temps/out.jpg";
+    $work_dir="/home/administrator/html/api/print-schedule";
+    $script_output= $work_dir."/temps/out.jpg";
     if (file_exists($script_output)) {
          $photo = _bot_uploadPhoto($user_id, $script_output);
       $attachments = array(
@@ -44,9 +44,9 @@ function sendPhoto($user_id) {
       );
     
       $keyboard = keybrd(2);
-     vkApi_messagesSend($user_id, 'картинка', $attachments,$keyboard);
+     vkApi_messagesSend($user_id, $script_output, $attachments,$keyboard);
     // unlink($script_output);
-     return "";
+     return $script_output;
     } else {
         return "Произошла ошибка!!!";
     }

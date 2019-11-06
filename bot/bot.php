@@ -121,8 +121,8 @@ function bot_sendMessage($user_id,$body,$from) {
                 case 'тест':
                     //$msg = 'Работает!!!';
                     //$msg = sendPhoto(120161867);
-                    $json = 'аэ';
-                    $msg = g_create('[
+                   $msg = user_info($user_id,'gmod','get','student',$mysqli);
+                   /* $msg = g_create('[
                             {
                             "subject": "Предмет",
                             "type": "L",
@@ -132,7 +132,7 @@ function bot_sendMessage($user_id,$body,$from) {
                             "time_end": "13:55",
                             "subgroup": "1"
                             }
-                            ]',120161867);
+                            ]',120161867);*/
                     break;
 
                 case 'пары':

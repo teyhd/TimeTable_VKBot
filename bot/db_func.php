@@ -146,7 +146,7 @@ if (mysqli_connect_errno()) {
     while ($stmt->fetch()) { 
         $col1 = normal($col1);
         $col2 = normal($col2);
-        $temp ="$temp* [$num] [$col1-$col2] \n$col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nУчитель: [$col5] \n[{$col4}] Test:{$graph}";
+        $temp ="$temp* [$num] [$col1-$col2] \n$col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nУчитель: [$col5] \n[{$col4}]";
         $num++;
     } 
     $stmt->close(); 
@@ -154,7 +154,8 @@ if (mysqli_connect_errno()) {
     if ($temp==null){
         $temp = "В этот день нет пар!";
     } 
-$mysqlis->close();  
+$mysqlis->close(); 
+if ($graph==2) $temp = "Пиздос";
 return $temp;
 
 } //Вывод для студентов

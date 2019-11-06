@@ -166,7 +166,7 @@ function bot_sendMessage($user_id,$body,$from) {
                           $podgroup =  user_info($user_id,'podgroup','get',1,$mysqli);
                           $groups   = "{$group}-{$kyrs}{$podgroup}"; 
                           //$msg = $date;
-                          $msgr = get_stud_raspis($groups,$date,$graph);
+                          $msgr = get_stud_raspis($groups,$date,$graph,$user_id);
                       }
                           else {
                               $teach_id = user_info($user_id,'teach_id','get',1,$mysqli);

@@ -128,7 +128,9 @@ $mysqlis->close();
 return $temp;
 } //Проверяем существование группы
 
-function get_stud_raspis($group,$dates,$graph){
+function get_stud_raspis($group,$dates,$graph,$user_id){
+    $array = array();
+    $ansr = array();
      $mysqlis = new mysqli(HOST_DB, LOGIN_DB, PASS_DB, "raspisanie");
     if (!$mysqlis->set_charset("utf8")) {
     printf("Ошибка при загрузке набора символов utf8: %s\n", $mysqlis->error);
@@ -146,6 +148,14 @@ if (mysqli_connect_errno()) {
     while ($stmt->fetch()) { 
         $col1 = normal($col1);
         $col2 = normal($col2);
+        $array['subject'] = "$col3";
+        $array['type'] =  "$col4";
+        $array['teacher'] = "$col5";
+        $array['audience'] = "$col6";
+        $array['time_start'] = "$col1";
+        $array['time_end'] = "$col2";
+        $array['subgroup'] = "$col7";
+        array_push($ansr,$array);
         $temp ="$temp* [$num] [$col1-$col2] \n$col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nУчитель: [$col5] \n[{$col4}]";
         $num++;
     } 
@@ -155,7 +165,10 @@ if (mysqli_connect_errno()) {
         $temp = "В этот день нет пар!";
     } 
 $mysqlis->close(); 
-if ($graph==2) $temp = "Пиздос";
+if ($graph==2) {
+    $fin_json = json_encode($ansr);
+    g_create($fin_json,$user_id);
+}
 return $temp;
 
 } //Вывод для студентов

@@ -121,8 +121,8 @@ function bot_sendMessage($user_id,$body,$from) {
                 case 'тест':
                     //$msg = 'Работает!!!';
                     //$msg = sendPhoto(120161867);
-                   $msg = user_info($user_id,'gmod','get','student',$mysqli);
-                   /* $msg = g_create('[
+                    $json = 'аэ';
+                    $msg = g_create('[
                             {
                             "subject": "Предмет",
                             "type": "L",
@@ -132,12 +132,11 @@ function bot_sendMessage($user_id,$body,$from) {
                             "time_end": "13:55",
                             "subgroup": "1"
                             }
-                            ]',120161867);*/
+                            ]',120161867);
                     break;
 
                 case 'пары':
                 case 'расписание':
-                      $graph = user_info($user_id,'gmod','get','student',$mysqli);
                       $whoam = user_info($user_id,'who','get','student',$mysqli);
                       if($countPar>1){
                           if(($parts[1]=='завтра')||($parts[2]=='завтра')){
@@ -166,7 +165,7 @@ function bot_sendMessage($user_id,$body,$from) {
                           $podgroup =  user_info($user_id,'podgroup','get',1,$mysqli);
                           $groups   = "{$group}-{$kyrs}{$podgroup}"; 
                           //$msg = $date;
-                          $msgr = get_stud_raspis($groups,$date,$graph,$user_id);
+                          $msgr = get_stud_raspis($groups,$date);
                       }
                           else {
                               $teach_id = user_info($user_id,'teach_id','get',1,$mysqli);

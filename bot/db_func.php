@@ -151,20 +151,19 @@ if (mysqli_connect_errno()) {
         $array['subject'] = "$col3";
         switch ($col4) {
             case 'Лекция':
-                $col4 = "Лек";
+                $array['type'] =  "Лек";
                 break;
            case 'Практика':
-                $col4 = "Пр";
+                $array['type'] =  "Пр";
                 break;
            case 'Лаб':
-                $col4 = "Н"; 
+                $array['type'] =  "Лаб";
                 break;     
             
             default:
-                $col4 = "Н";
+                $array['type'] =  "Н";
                 break;
         }
-        $array['type'] =  "$col4";
         $array['teacher'] = "$col5";
         $array['audience'] = "$col6";
         $array['time_start'] = "$col1";
@@ -183,6 +182,7 @@ $mysqlis->close();
 if ($graph==2) {
     $fin_json = json_encode($ansr);
     g_create($fin_json,$user_id);
+    return null;
 }
 return $temp;
 

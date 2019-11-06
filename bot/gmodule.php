@@ -44,7 +44,7 @@ function sendPhoto($user_id) {
       );
     
       $keyboard = keybrd(2);
-     vkApi_messagesSend($user_id, $script_output, $attachments,$keyboard);
+     vkApi_messagesSend($user_id, '', $attachments,$keyboard);
     // unlink($script_output);
      return $script_output;
     } else {

@@ -137,6 +137,7 @@ function bot_sendMessage($user_id,$body,$from) {
 
                 case 'пары':
                 case 'расписание':
+                      $graph = user_info($user_id,'gmod','get','5',$mysqli);
                       $whoam = user_info($user_id,'who','get','student',$mysqli);
                       if($countPar>1){
                           if(($parts[1]=='завтра')||($parts[2]=='завтра')){
@@ -165,7 +166,7 @@ function bot_sendMessage($user_id,$body,$from) {
                           $podgroup =  user_info($user_id,'podgroup','get',1,$mysqli);
                           $groups   = "{$group}-{$kyrs}{$podgroup}"; 
                           //$msg = $date;
-                          $msgr = get_stud_raspis($groups,$date,$user_id);
+                          $msgr = get_stud_raspis($groups,$date,$graph);
                       }
                           else {
                               $teach_id = user_info($user_id,'teach_id','get',1,$mysqli);

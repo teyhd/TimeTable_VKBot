@@ -156,7 +156,7 @@ if (mysqli_connect_errno()) {
         $stmt->close(); 
            
          if ($temp==null){
-                $temp = "В этот день нет пар!";
+                $temp = "В этот день нет пар!1";
             } 
         $mysqlis->close();  
         return $temp;
@@ -178,7 +178,7 @@ if (mysqli_connect_errno()) {
         $stmt->close(); 
         }   
         if ($num==null){
-            $temp = "В этот день нет пар!";
+            $temp = "В этот день нет пар!1";
             return $temp;
         } 
         $mysqlis->close();  

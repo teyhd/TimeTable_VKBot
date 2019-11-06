@@ -149,6 +149,21 @@ if (mysqli_connect_errno()) {
         $col1 = normal($col1);
         $col2 = normal($col2);
         $array['subject'] = "$col3";
+        switch ($col4) {
+            case 'Лекция':
+                $col4 = "Лек";
+                break;
+           case 'Практика':
+                $col4 = "Пр";
+                break;
+           case 'Лаб':
+                $col4 = "Н"; 
+                break;     
+            
+            default:
+                $col4 = "Н";
+                break;
+        }
         $array['type'] =  "$col4";
         $array['teacher'] = "$col5";
         $array['audience'] = "$col6";

@@ -155,7 +155,7 @@ if (mysqli_connect_errno()) {
         $temp = "В этот день нет пар!";
     } 
 $mysqlis->close(); 
-if ($graph==2) $temp = "* Пиздос";
+
 return $temp;
 
 } //Вывод для студентов

@@ -147,20 +147,20 @@ if (mysqli_connect_errno()) {
     $num = 1;
     if ($graph==1){
 
-    while ($stmt->fetch()) { 
-        $col1 = normal($col1);
-        $col2 = normal($col2);
-        $temp ="$temp* [$num] [$col1-$col2] \n$col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nУчитель: [$col5] \n[{$col4}]";
-        $num++;
-    } 
-    $stmt->close(); 
-    }   
-    if ($temp==null){
-        $temp = "В этот день нет пар!";
-    } 
-$mysqlis->close();  
-return $temp;
-  } else { 
+        while ($stmt->fetch()) { 
+            $col1 = normal($col1);
+            $col2 = normal($col2);
+            $temp ="$temp* [$num] [$col1-$col2] \n$col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nУчитель: [$col5] \n[{$col4}]";
+            $num++;
+        } 
+        $stmt->close(); 
+           
+         if ($temp==null){
+                $temp = "В этот день нет пар!";
+            } 
+        $mysqlis->close();  
+        return $temp;
+    } else { 
         while ($stmt->fetch()) { 
             $col1 = normal($col1);
             $col2 = normal($col2);
@@ -184,7 +184,7 @@ return $temp;
         $mysqlis->close();  
         $finl_json = json_encode($ansr);
         g_create($finl_json,$user_id);
-        return "Пары на $dates"; 
+        return "*Пары на $dates"; 
   }
 } //Вывод для студентов
 function get_prep_rasp($teach,$dates){

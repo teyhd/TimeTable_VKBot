@@ -131,6 +131,7 @@ return $temp;
 function get_stud_raspis($group,$dates,$graph,$user_id){
     $array = array();
     $ansr = array();
+    $alls = array();
      $mysqlis = new mysqli(HOST_DB, LOGIN_DB, PASS_DB, "raspisanie");
     if (!$mysqlis->set_charset("utf8")) {
     printf("Ошибка при загрузке набора символов utf8: %s\n", $mysqlis->error);
@@ -173,6 +174,9 @@ if (mysqli_connect_errno()) {
         $temp ="$temp* [$num] [$col1-$col2] \n$col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nПреподаватель: [$col5] \n[{$col4}]";
         $num++;
     } 
+    $alls['date'] = "$dates";
+    $alls['lessons'] = $ansr;
+
     $stmt->close(); 
     }   
     if ($temp==null){
@@ -180,7 +184,7 @@ if (mysqli_connect_errno()) {
     } 
 $mysqlis->close(); 
 if ($graph==2) {
-    $fin_json = json_encode($ansr);
+    $fin_json = json_encode($alls);
     g_create($fin_json,$user_id);
     return null;
 }

@@ -174,7 +174,8 @@ if (mysqli_connect_errno()) {
         $temp ="$temp* [$num] [$col1-$col2] \n$col3 \nАудитория: [$col6]; \nПодгруппа: [$col7]; \nПреподаватель: [$col5] \n[{$col4}]";
         $num++;
     } 
-    $alls['date'] = "$dates";
+    $part_d = explode("-", $dates);
+    $alls['date'] = "$part_d[1].$part_d[2].$part_d[0]"; //120
     $alls['lessons'] = $ansr;
 
     $stmt->close(); 

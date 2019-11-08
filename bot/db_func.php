@@ -175,7 +175,7 @@ if (mysqli_connect_errno()) {
         $num++;
     } 
     $part_d = explode("-", $dates);
-    $alls['date'] = "$part_d[1].$part_d[2].$part_d[0]"; //120
+    $alls['date'] = "$part_d[2].$part_d[1].$part_d[0]"; //120
     $alls['lessons'] = $ansr;
 
     $stmt->close(); 

@@ -9,7 +9,7 @@ function vkApi_messagesSend($peer_id, $message, $attachments = array(),$keyboard
     'peer_id'    => $peer_id,
     'message'    => $message,
     'attachment' => implode(',', $attachments),
-    'keyboard' => $keyboard)); 
+    'keyboard' => $keyboard));
     } catch (Exception $e) {
     $e= $e->getMessage();
     log_msg($e);

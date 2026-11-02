@@ -36,4 +36,3 @@ function yandexApi_getVoice($text) {
 
   return $file_name;
 }
-

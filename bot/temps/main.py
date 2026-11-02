@@ -5,8 +5,11 @@ import imgkit
 import json
 import sys
 
-input_file = open(sys.argv[1], "r")
-output_file = sys.argv[2]
+#input_file = open(sys.argv[1], "r")
+#output_file = sys.argv[2]
+
+input_file = open("in.json", "r")
+output_file = "o.png"
 
 lessons = json.load(input_file)
 
@@ -35,6 +38,7 @@ template = templateEnv.get_template('schedule.html')
 res = template.render(lessons=lessons)
 
 css = ['./css/w3.css', './css/style.css']
+print(res)
 imgkit.from_string(res, output_file, options={
     'quiet': '',
     # 'xvfb': '',

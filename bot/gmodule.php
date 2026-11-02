@@ -42,7 +42,7 @@ function sendPhoto($user_id) {
       $attachments = array(
         'photo'.$photo['owner_id'].'_'.$photo['id']
       );
-    
+
       $keyboard = keybrd(2);
      vkApi_messagesSend($user_id, '', $attachments,$keyboard);
     // unlink($script_output);

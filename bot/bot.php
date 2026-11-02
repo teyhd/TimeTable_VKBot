@@ -6,7 +6,7 @@ function bot_sendMessage($user_id,$body,$from) {
     $user = array_pop($users_get_response);
     $name = $user['first_name'];
     $body = str_replace("[club178013145|@teyhdbot]", '', $body);
-    $textmsg = mb_strtolower($body);         
+    $textmsg = mb_strtolower($body);
     $textmsg = rtrim($textmsg,"!?.,/");
     $textmsg = ltrim($textmsg, " \t.");
     $textmsg = ltrim($textmsg, " ");
@@ -37,13 +37,13 @@ function bot_sendMessage($user_id,$body,$from) {
                     user_info($user_id,'who','set','prepod',$mysqli);
                     user_info($user_id,'dialog','set','teacher_set',$mysqli);
                 break;
-                
+
                 default:
                     $msg = "Какая ваша должность? Студент / Преподаватель?";
                     $keyboard = keybrd(1);
                     break;
             }
-        break;     
+        break;
         case 'set_pred':
             if($textmsg=='да'){
                 $body= predict($user_id);
@@ -62,7 +62,7 @@ function bot_sendMessage($user_id,$body,$from) {
                $msg = "Напиши свою учебную группу";
                user_info($user_id,'dialog','set','set_group',$mysqli);
           }
-            
+
         break;
        case 'teacher_set':
            $temp =get_teach_id($body);
@@ -110,9 +110,9 @@ function bot_sendMessage($user_id,$body,$from) {
                $msg = "Такого пункта нет. Что вы хотите натсроить? Графическую оболочку[оболочку] | Должность/Группу | Ничего";
                $keyboard = keybrd(4);
            }
-           
-        break;        
-        
+
+        break;
+
         default:
             $parts = explode(" ",$textmsg);
             $countPar = count($parts);
@@ -143,7 +143,7 @@ function bot_sendMessage($user_id,$body,$from) {
                           if(($parts[1]=='завтра')||($parts[2]=='завтра')){
                               $date = date('Y-m-d', strtotime(' +1 day'));
                           } else{
-                              
+
                               if (strpos($parts[1], '.') !== false) {
                                     $parts = explode(".",$parts[1]);
                                 } else $parts = explode(".",$parts[2]);
@@ -155,7 +155,7 @@ function bot_sendMessage($user_id,$body,$from) {
                                   vkApi_messagesSend($from, "Неверная дата!!!", array(),$keyboard);
                                     return 'Error';
                               }
-                          } 
+                          }
                      } else $date = date('Y-m-d');
                       $part = explode("-", $date);
                       $temp_d = "Расписание на $part[2].$part[1]";
@@ -164,7 +164,7 @@ function bot_sendMessage($user_id,$body,$from) {
                           $group    =  user_info($user_id,'learn_group','get',1,$mysqli);
                           $kyrs     =  now_year() - user_info($user_id,'year','get',1,$mysqli) + 1;
                           $podgroup =  user_info($user_id,'podgroup','get',1,$mysqli);
-                          $groups   = "{$group}-{$kyrs}{$podgroup}"; 
+                          $groups   = "{$group}-{$kyrs}{$podgroup}";
                           //$msg = $date;
                           $msgr = get_stud_raspis($groups,$date,$graph,$user_id);
                       }
@@ -187,20 +187,20 @@ function bot_sendMessage($user_id,$body,$from) {
         break;
     }
     if($msgr!=null){
-       $msg = explode("*",$msgr); 
+       $msg = explode("*",$msgr);
        foreach ($msg as $value) {
            vkApi_messagesSend($from, $value, array(),$keyboard);
        }
     }
-    
+
     vkApi_messagesSend($from, $msg, array(),$keyboard);
-    $mysqli->close();  
+    $mysqli->close();
 }
 
 function now_year(){
 $currentYear=date("Y");
-$currentMonth=date("m"); 
-if($currentMonth >="08") 
+$currentMonth=date("m");
+if($currentMonth >="08")
      return ($currentYear);
 if($currentMonth < "08")
      return ($currentYear-1);

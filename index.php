@@ -72,5 +72,3 @@ function _callback_response($data) {
   echo $data;
   exit();
 }
-
-
